@@ -65,7 +65,7 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
 
 1. The table below summarizes the performance of both encoders:
 
-    |                           | HEVC encoding on CPU | HEVC encoding on F1  |
+    |                           | HEVC encoding on CPU | HEVC encoding on FP1c  |
     | :------------------------ |-------------:| -------:|
     | performance               | 9 fps        | 52 fps  |
     | speed vs real-time        | 0.358 x      | 2.08 x  |
@@ -80,15 +80,15 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
 
 #### Conclusion
 
-AWS F1 instances with Xilinx FPGAs can provide significant performance improvements over CPUs. The HEVC encoder running on F1 is **5.7x** faster than the libx265 codec running on the CPU. It also provides better compression without sacrificing quality.
+Huawei FP1c instances with Xilinx FPGAs can provide significant performance improvements over CPUs. The HEVC encoder running on FP1c is **5.7x** faster than the libx265 codec running on the CPU. It also provides better compression without sacrificing quality.
 
 Multiple instances of the NGCodec encoder could be loaded in the FPGA, allowing parallel processing of multiple video streams and easily delivering more than a 10x increase in performance/$ over a CPU-based solution.
 
-It is possible to use F1 to accelerate popular frameworks such as ```ffmpeg```. This is a very powerful proposition as it allows end-users to keep working with their preferred tools and APIs while transparently benefiting from acceleration.
+It is possible to use FP1c to accelerate popular frameworks such as ```ffmpeg```. This is a very powerful proposition as it allows end-users to keep working with their preferred tools and APIs while transparently benefiting from acceleration.
 
-In addition to video transcoding, F1 instances are very well suited to accelerate compute intensive workloads such as: genomics, financial analytics, big data analytics, security or machine learning.
+In addition to video transcoding, FP1c instances are very well suited to accelerate compute intensive workloads such as: genomics, financial analytics, big data analytics, security or machine learning.
 
-Now that you have experienced the performance potential of AWS F1 instances, the next lab will introduce you to the SDAccel IDE and how to develop, profile and optimize an F1 application.
+Now that you have experienced the performance potential of Huawei FP1c instances, the next lab will introduce you to the SDAccel IDE and how to develop, profile and optimize an FP1c application.
 
 ---------------------------------------
 
