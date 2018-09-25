@@ -38,10 +38,10 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
     ```
 
     The encoder will finish with a message similar to this one: \
-    *frame=500 **fps=9.0** q=-0.0 **Lsize=19933kB** time=00:00:19.92 bitrate=8197.4kbits/s **speed=0.358x***
+    frame=  240 fps= 16 q=-0.0 Lsize=    2183kB time=00:00:09.52 bitrate=1878.2kbits/s
     > **fps** measures the performance of the encoder in processed frames per second. \
     **size** measures the size of the compressed output file. \
-    **speed** measures the ratio of video time to encoding time. \
+
 
 #### Step 2: Running with the encoder on the FP1c FPGA
 
@@ -58,8 +58,7 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
     ```
 
     The encoder will finish with a message similar to this one: \
-    *frame=500 **fps=52** q=-0.0 LPSNR=Y:inf U:inf V:inf \*:inf **size=17580kB** time=00:00:20.00 bitrate=7200.9kbits/s **speed=2.08x***
-
+    frame=  240 fps= 42 q=-0.0 Lsize=    3473kB time=00:00:09.64 bitrate=2951.5kbits/s speed=1.71x
 
 #### Step 3: Comparing performance
 
@@ -67,10 +66,9 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
 
     |                           | HEVC encoding on CPU | HEVC encoding on FP1c  |
     | :------------------------ |-------------:| -------:|
-    | performance               | 9 fps        | 52 fps  |
-    | speed vs real-time        | 0.358 x      | 2.08 x  |
-    | duration                  | 55.6 sec     | 9.6 sec |
-    | compressed file size      | 19.9 Mb      | 17.5 Mb |
+    | performance               | 16 fps        | 42 fps  |
+    | speed vs real-time        | NA      | 1.71 x  |
+    | compressed file size      | 2.183 Mb      | 3.473 Mb |
 
 1. Close your terminal to conclude this module.
     ```bash
