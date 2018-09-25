@@ -1,9 +1,7 @@
 
-<table style="width:100%">
   <tr>
     <th width="100%" colspan="5"><h2>XDF 2018 - NGCodec Demo</h2></th>
   </tr>
-</table>
 
 ---------------------------------------
 
@@ -44,13 +42,19 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
     > **fps** measures the performance of the encoder in processed frames per second. \
     **size** measures the size of the compressed output file. \
     **speed** measures the ratio of video time to encoding time. \
-    Note: You can change to other .cmd file under the folder.
 
-#### Step 2: Running with the encoder on the F1 FPGA
+#### Step 2: Running with the encoder on the FP1c FPGA
 
-1. Encode using the NGCodec HEVC encoder running on the F1 FPGA.
+1. Set up environement
+   ```bash
+   XILINX_SDX_PATH=${XILINX_SDX}
+   export LD_LIBRARY_PATH=${XILINX_SDX_PATH}/runtime/lib/x86_64:${XILINX_SDX_PATH}/lib/lnx64.o/Default:${XILINX_SDX_PATH}/lib/lnx64.o:$(pwd)/../../xmaapi/lib
+   export XILINX_OPENCL=$(pwd)/../../../userspace/sdaccel/lib
+   ```
+
+1. Encode using the NGCodec HEVC encoder running on the FP1c FPGA.
     ```bash
-    ./ffmpeg -f rawvideo -pix_fmt yuv420p -s:v 1920x1080 -i /home/centos/vectors/crowd8_420_1920x1080_50.yuv -an -frames 1000 -c:v xlnx_hevc_enc -psnr -g 30 -global_quality 40 -f hevc -y ./crowd8_420_1920x1080_50_NGcodec_out0_g30_gq40.hevc
+    sh hevc_tst.cmd
     ```
 
     The encoder will finish with a message similar to this one: \
