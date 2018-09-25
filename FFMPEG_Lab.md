@@ -91,7 +91,3 @@ In addition to video transcoding, FP1c instances are very well suited to acceler
 Now that you have experienced the performance potential of Huawei FP1c instances, the next lab will introduce you to the SDAccel IDE and how to develop, profile and optimize an FP1c application.
 
 ---------------------------------------
-
-<p align="center"><b>
-Start the next module: <a href="IDCT_Lab.md">3. Developing, profiling and optimizing F1 applications with SDAccel</a>
-</b></p>
