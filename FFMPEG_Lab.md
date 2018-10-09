@@ -88,4 +88,28 @@ In addition to video transcoding, FP1c instances are very well suited to acceler
 
 Now that you have experienced the performance potential of Huawei FP1c instances, the next lab will introduce you to the SDAccel IDE and how to develop, profile and optimize an FP1c application.
 
----------------------------------------
+--------------------------------------
+
+#### How to recover the Demo
+
+1. Change direcory to the XDF folder
+   cd /XDF/
+
+2. Remove the current NGCodec_demo folder
+   rm -rf NGCodec_demo
+
+3. Unzip the tar file
+   tar -zxf ngcodec.tar.gz
+
+4. Check xclbin file availability
+   ls /XDF/huaweicloud-fpga/fp1/hardware/sdaccel_design/examples/ngcodec/prj/bin
+
+   Check if vu9p_abrScal_ngcHevc.xclbin is there. If not, copy the file from /XDF/NGCodec_demo/xclbins/ to this path.
+
+5. Check yaml file availability
+   ls /tmp | grep ffmpeg
+
+   Check if ffmpeg_cfg.yaml is there. If no, copy the file from /XDF/NGCodec_demo/ to this path. Then modify the ffmpeg_cfg.yaml as below:
+
+   - pluginpath: /XDF/NGCodec_demo/xmaapi/share/libxmaapi
+   - xclbinpath: /XDF/huaweicloud-fpga/fp1/hardware/sdaccel_design/examples/ngcodec/prj/bin
