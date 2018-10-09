@@ -78,7 +78,7 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
 
 #### Conclusion
 
-Huawei FP1c instances with Xilinx FPGAs can provide significant performance improvements over CPUs. 
+Huawei FP1c instances with Xilinx FPGAs can provide significant performance improvements over CPUs.
 
 Multiple instances of the NGCodec encoder could be loaded in the FPGA, allowing parallel processing of multiple video streams and easily delivering more than a 10x increase in performance/$ over a CPU-based solution.
 
@@ -93,21 +93,31 @@ Now that you have experienced the performance potential of Huawei FP1c instances
 #### How to recover the Demo
 
 1. Change direcory to the XDF folder
+   ```bash
    cd /XDF/
+   ```
 
 2. Remove the current NGCodec_demo folder
+   ```bash
    rm -rf NGCodec_demo
+   ```
 
 3. Unzip the tar file
+   ```bash
    tar -zxf ngcodec.tar.gz
+   ```
 
 4. Check xclbin file availability
+   ```bash
    ls /XDF/huaweicloud-fpga/fp1/hardware/sdaccel_design/examples/ngcodec/prj/bin
+   ```
 
    Check if vu9p_abrScal_ngcHevc.xclbin is there. If not, copy the file from /XDF/NGCodec_demo/xclbins/ to this path.
 
 5. Check yaml file availability
+   ```bash
    ls /tmp | grep ffmpeg
+   ```
 
    Check if ffmpeg_cfg.yaml is there. If no, copy the file from /XDF/NGCodec_demo/ to this path. Then modify the ffmpeg_cfg.yaml as below:
 
