@@ -32,13 +32,18 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
 
 #### Step 1: Running with the encoder on the CPU
 
-1. Encode using the libx265 software codec running on the CPU.
-    ```bash
-    sh hevc_tst_cpu.cmd
-    ```
+1. Encode using the libx265 software codec running on the CPU. You may use pre-built script or input below command directly.
 
+###### Method 1
+```bash
+    sh hevc_tst_cpu.cmd
+```
+###### Method 2
+```bash
+    ffmpeg -f rawvideo -s:v 1920x1080 -pix_fmt yuv420p -i  ../../input/crowd8_420_1920x1080_50.yuv -c:v libx265 -an -frames 1000 -preset medium -g 30 -q 40 -f hevc -y ./hw_outdir/crowd8_cpu_tst.hevc
+```
     The encoder will finish with a message similar to this one: \
-    frame=  240 fps= 16 q=-0.0 Lsize=    2183kB time=00:00:09.52 bitrate=1878.2kbits/s
+    frame=  500 fps= 13 q=-0.0 Lsize= 19361kB time=00:00:19.92 bitrate=7962.3kbits/s
     > **fps** measures the performance of the encoder in processed frames per second. \
     **size** measures the size of the compressed output file. \
 
@@ -52,13 +57,20 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
    export XILINX_OPENCL=$(pwd)/../../../userspace/sdaccel/lib
    ```
 
-1. Encode using the NGCodec HEVC encoder running on the FP1c FPGA.
-    ```bash
+1. Encode using the NGCodec HEVC encoder running on the FP1c FPGA. You may use pre-built script or input below command directly.
+
+###### Method 1
+```bash
     sh hevc_tst.cmd
-    ```
+```
+
+###### Method 2
+```bash
+./ffmpeg -f rawvideo -s:v 1920x1080 -pix_fmt yuv420p -i  ../../input/crowd8_420_1920x1080_50.yuv -c:v NGC265 -an -frames 1000 -psnr -g 30 -global_quality 40 -f hevc -y ./hw_outdir/crowd8_tst.hevc
+```
 
     The encoder will finish with a message similar to this one: \
-    frame=  240 fps= 42 q=-0.0 Lsize=    3473kB time=00:00:09.64 bitrate=2951.5kbits/s speed=1.71x
+    frame=  500 fps= 50 q=-0.0 Lsize= 19814kB time=00:00:20.04 bitrate=8099.5kbits/s speed=2.02x
 
 #### Step 3: Comparing performance
 
@@ -67,18 +79,34 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
     |                           | HEVC encoding on CPU | HEVC encoding on FP1c  |
     | :------------------------ |-------------:| -------:|
     | performance               | 16 fps        | 42 fps  |
-    | speed vs real-time        | NA      | 1.71 x  |
+    | speed vs real-time        | 0.64 x *      | 1.71 x  |
     | compressed file size      | 2.183 Mb      | 3.473 Mb |
+    | FPGA acceleration ratio   | 3.1 x                    |
 
-1. Close your terminal to conclude this module.
+*Note: FFmpeg doesn't print speed value directly. It can be calculated as 16fps/25fps=0.64.
+
+#### step 4(optional): Viewing output video files
+
+1. Open a VNC viewer and connect to your instance
+2. Navigate to NGCodec demo folder
+```bash
+cd /XDF/NGCodec_demo/FFmpeg/build
+```
+3. Play the output encoded video files
+```bash
+ffplay ./hw_outdir/crowd8_tst.hevc
+```
+
+Note: Using VNC viewer to watch the video is limited to network bandwidth so that the video streaming may not be fluent.
+
+#### step 5: Close your terminal to conclude this module.
     ```bash
-    exit
     exit
     ```
 
 #### Conclusion
 
-Huawei FP1c instances with Xilinx FPGAs can provide significant performance improvements over CPUs.
+Huawei FP1c instances with Xilinx FPGAs can provide significant performance improvements over CPUs.The HEVC encoder running on F1 is 3.1x faster than the libx265 codec running on the CPU. It also provides better compression without sacrificing quality.
 
 Multiple instances of the NGCodec encoder could be loaded in the FPGA, allowing parallel processing of multiple video streams and easily delivering more than a 10x increase in performance/$ over a CPU-based solution.
 
@@ -90,7 +118,9 @@ Now that you have experienced the performance potential of Huawei FP1c instances
 
 --------------------------------------
 
-#### How to recover the Demo
+## Appendix
+
+#### If you think the demo was broken, you may use below methods to recover the demo.
 
 1. Change direcory to the XDF folder
    ```bash
