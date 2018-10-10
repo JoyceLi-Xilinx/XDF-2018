@@ -35,11 +35,11 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
 1. Encode using the libx265 software codec running on the CPU. You may use pre-built script or input below command directly.
 
 ###### Method 1
-    ```bash
+  ```bash
     sh hevc_tst_cpu.cmd
     ```
 ###### Method 2
-    ```bash
+  ```bash
     ffmpeg -f rawvideo -s:v 1920x1080 -pix_fmt yuv420p -i  ../../input/crowd8_420_1920x1080_50.yuv -c:v libx265 -an -frames 1000 -preset medium -g 30 -q 40 -f hevc -y ./hw_outdir/crowd8_cpu_tst.hevc
     ```
 The encoder will finish with a message similar to this one: \
