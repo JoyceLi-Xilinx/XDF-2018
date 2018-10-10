@@ -89,12 +89,12 @@ The encoder will finish with a message similar to this one: \
 
 #### step 4(optional): Viewing output video files
 
-1. Open a VNC viewer and connect to your instance
-2. Navigate to NGCodec demo folder
+1. Open a VNC viewer and connect to your instance.
+2. Navigate to NGCodec demo folder.
     ```bash
     cd /XDF/NGCodec_demo/FFmpeg/build
     ```
-3. Play the output encoded video files
+3. Play the output encoded video files.
     ```bash
     ffplay ./hw_outdir/crowd8_tst.hevc
     ```
