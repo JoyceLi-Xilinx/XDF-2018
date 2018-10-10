@@ -71,7 +71,7 @@ The encoder will finish with a message similar to this one: \
 ```
 The encoder will finish with a message similar to this one: \
 *frame=500 **fps=50** q=-0.0 **Lsize=19814kB** time=00:00:20.04 bitrate=8099.5kbits/s **speed=2.02x***
-
+> **speed** measures the ratio of video time to encoding time.
 
 
 #### Step 3: Comparing performance
@@ -83,7 +83,7 @@ The encoder will finish with a message similar to this one: \
     | performance               | 16 fps        | 42 fps  |
     | speed vs real-time        | 0.64 x *      | 1.71 x  |
     | compressed file size      | 2.183 Mb      | 3.473 Mb |
-    | FPGA acceleration ratio   | 3.1 x                    |
+    | FPGA acceleration ratio   | 3.1 x                    
 
 *Note: FFmpeg doesn't print speed value directly. It can be calculated as 16fps/25fps=0.64.
 
