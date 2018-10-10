@@ -35,13 +35,13 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
 1. Encode using the libx265 software codec running on the CPU. You may use pre-built script or input below command directly.
 
 ###### Method 1
-```bash
+    ```bash
     sh hevc_tst_cpu.cmd
-```
+    ```
 ###### Method 2
-```bash
+    ```bash
     ffmpeg -f rawvideo -s:v 1920x1080 -pix_fmt yuv420p -i  ../../input/crowd8_420_1920x1080_50.yuv -c:v libx265 -an -frames 1000 -preset medium -g 30 -q 40 -f hevc -y ./hw_outdir/crowd8_cpu_tst.hevc
-```
+    ```
 The encoder will finish with a message similar to this one: \
 *frame=500 **fps=13.0** q=-0.0 **Lsize=19361kB** time=00:00:19.92 bitrate=7962.3kbits/s  
 > **fps** measures the performance of the encoder in processed frames per second. \
@@ -51,7 +51,7 @@ The encoder will finish with a message similar to this one: \
 
 #### Step 2: Running with the encoder on the FP1c FPGA
 
-1. Set up environement
+1. Set up environment
    ```bash
    XILINX_SDX_PATH=${XILINX_SDX}
    export LD_LIBRARY_PATH=${XILINX_SDX_PATH}/runtime/lib/x86_64:${XILINX_SDX_PATH}/lib/lnx64.o/Default:${XILINX_SDX_PATH}/lib/lnx64.o:$(pwd)/../../xmaapi/lib
@@ -61,14 +61,14 @@ The encoder will finish with a message similar to this one: \
 1. Encode using the NGCodec HEVC encoder running on the FP1c FPGA. You may use pre-built script or input below command directly.
 
 ###### Method 1
-```bash
-    sh hevc_tst.cmd
-```
+  ```bash
+  sh hevc_tst.cmd
+  ```
 
 ###### Method 2
-```bash
-./ffmpeg -f rawvideo -s:v 1920x1080 -pix_fmt yuv420p -i  ../../input/crowd8_420_1920x1080_50.yuv -c:v NGC265 -an -frames 1000 -psnr -g 30 -global_quality 40 -f hevc -y ./hw_outdir/crowd8_tst.hevc
-```
+  ```bash
+  ./ffmpeg -f rawvideo -s:v 1920x1080 -pix_fmt yuv420p -i  ../../input/crowd8_420_1920x1080_50.yuv -c:v NGC265 -an -frames 1000 -psnr -g 30 -global_quality 40 -f hevc -y ./hw_outdir/crowd8_tst.hevc
+  ```
 The encoder will finish with a message similar to this one: \
 *frame=500 **fps=50** q=-0.0 **Lsize=19814kB** time=00:00:20.04 bitrate=8099.5kbits/s **speed=2.02x***
 > **speed** measures the ratio of video time to encoding time.
@@ -91,20 +91,20 @@ The encoder will finish with a message similar to this one: \
 
 1. Open a VNC viewer and connect to your instance
 2. Navigate to NGCodec demo folder
-```bash
-cd /XDF/NGCodec_demo/FFmpeg/build
-```
+    ```bash
+    cd /XDF/NGCodec_demo/FFmpeg/build
+    ```
 3. Play the output encoded video files
-```bash
-ffplay ./hw_outdir/crowd8_tst.hevc
-```
+    ```bash
+    ffplay ./hw_outdir/crowd8_tst.hevc
+    ```
 
 Note: Using VNC viewer to watch the video is limited to network bandwidth so that the video streaming may not be fluent.
 
 #### step 5: Close your terminal to conclude this module.
-```bash
-    exit
-```
+   ```bash
+   exit
+   ```
 
 #### Conclusion
 
