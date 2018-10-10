@@ -42,10 +42,11 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
 ```bash
     ffmpeg -f rawvideo -s:v 1920x1080 -pix_fmt yuv420p -i  ../../input/crowd8_420_1920x1080_50.yuv -c:v libx265 -an -frames 1000 -preset medium -g 30 -q 40 -f hevc -y ./hw_outdir/crowd8_cpu_tst.hevc
 ```
-    The encoder will finish with a message similar to this one: \
-    frame=  500 fps= 13 q=-0.0 Lsize= 19361kB time=00:00:19.92 bitrate=7962.3kbits/s
-    > **fps** measures the performance of the encoder in processed frames per second. \
-    **size** measures the size of the compressed output file. \
+The encoder will finish with a message similar to this one: \
+*frame=500 **fps=13.0** q=-0.0 **Lsize=19361kB** time=00:00:19.92 bitrate=7962.3kbits/s  
+> **fps** measures the performance of the encoder in processed frames per second. \
+**size** measures the size of the compressed output file. \
+
 
 
 #### Step 2: Running with the encoder on the FP1c FPGA
@@ -68,9 +69,10 @@ The HEVC encoder is provided courtesy of **NGCodec** [(www.ngcodec.com)](www.ngc
 ```bash
 ./ffmpeg -f rawvideo -s:v 1920x1080 -pix_fmt yuv420p -i  ../../input/crowd8_420_1920x1080_50.yuv -c:v NGC265 -an -frames 1000 -psnr -g 30 -global_quality 40 -f hevc -y ./hw_outdir/crowd8_tst.hevc
 ```
+The encoder will finish with a message similar to this one: \
+*frame=500 **fps=50** q=-0.0 **Lsize=19814kB** time=00:00:20.04 bitrate=8099.5kbits/s **speed=2.02x***
 
-    The encoder will finish with a message similar to this one: \
-    frame=  500 fps= 50 q=-0.0 Lsize= 19814kB time=00:00:20.04 bitrate=8099.5kbits/s speed=2.02x
+
 
 #### Step 3: Comparing performance
 
