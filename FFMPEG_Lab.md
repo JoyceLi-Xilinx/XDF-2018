@@ -102,9 +102,9 @@ ffplay ./hw_outdir/crowd8_tst.hevc
 Note: Using VNC viewer to watch the video is limited to network bandwidth so that the video streaming may not be fluent.
 
 #### step 5: Close your terminal to conclude this module.
-    ```bash
+```bash
     exit
-    ```
+```
 
 #### Conclusion
 
