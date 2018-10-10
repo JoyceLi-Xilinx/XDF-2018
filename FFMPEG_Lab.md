@@ -58,7 +58,7 @@ export LD_LIBRARY_PATH=${XILINX_SDX_PATH}/runtime/lib/x86_64:${XILINX_SDX_PATH}/
 export XILINX_OPENCL=$(pwd)/../../../userspace/sdaccel/lib
 ```
 
-1. Encode using the NGCodec HEVC encoder running on the FP1c FPGA. You may use pre-built script or input below command directly.
+2. Encode using the NGCodec HEVC encoder running on the FP1c FPGA. You may use pre-built script or input below command directly.
 
 ###### Method 1
   ```bash
