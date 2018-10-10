@@ -80,9 +80,9 @@ The encoder will finish with a message similar to this one: \
 
     |                           | HEVC encoding on CPU | HEVC encoding on FP1c  |
     | :------------------------ |-------------:| -------:|
-    | performance               | 16 fps        | 42 fps  |
-    | speed vs real-time        | 0.64 x *      | 1.71 x  |
-    | compressed file size      | 2.183 Mb      | 3.473 Mb |
+    | performance               | 13 fps        | 50 fps  |
+    | speed vs real-time        | 0.64 x *      | 2.02 x  |
+    | compressed file size      | 19.3 MB      | 19.8 MB |
     | FPGA acceleration ratio   |               | 3.1 x|     
 
 *Note: FFmpeg doesn't print speed value directly. It can be calculated as 16fps/25fps=0.64.
