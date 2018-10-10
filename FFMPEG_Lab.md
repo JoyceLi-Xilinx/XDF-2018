@@ -76,7 +76,7 @@ The encoder will finish with a message similar to this one: \
 
 #### Step 3: Comparing performance
 
-The table below summarizes the performance of both encoders:
+1. The table below summarizes the performance of both encoders:
 
     |                           | HEVC encoding on CPU | HEVC encoding on FP1c  |
     | :------------------------ |-------------:| -------:|
