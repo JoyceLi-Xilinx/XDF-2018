@@ -81,11 +81,11 @@ The encoder will finish with a message similar to this one: \
     |                           | HEVC encoding on CPU | HEVC encoding on FP1c  |
     | :------------------------ |-------------:| -------:|
     | performance               | 13 fps        | 50 fps  |
-    | speed vs real-time        | 0.64 x *      | 2.02 x  |
+    | speed vs real-time        | 0.52 x *      | 2.02 x  |
     | compressed file size      | 19.3 MB      | 19.8 MB |
     | FPGA acceleration ratio   |               | 3.1 x|     
 
-*Note: FFmpeg doesn't print speed value directly. It can be calculated as 16fps/25fps=0.64.
+*Note: FFmpeg doesn't print speed value directly. It can be calculated as 13fps/25fps=0.52.
 
 #### step 4(optional): Viewing output video files
 
@@ -124,7 +124,7 @@ Now that you have experienced the performance potential of Huawei FP1c instances
 
 #### If you think the demo was broken, you may use below methods to recover the demo.
 
-1. Change direcory to the XDF folder
+1. Change directory to the XDF folder
    ```bash
    cd /XDF/
    ```
