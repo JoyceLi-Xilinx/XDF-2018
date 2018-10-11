@@ -124,7 +124,7 @@ Now that you have experienced the performance potential of Huawei FP1c instances
 
 #### If you think the demo was broken, you may use below methods to recover the demo.
 
-1. Change direcory to the XDF folder
+1. Change directory to the XDF folder
    ```bash
    cd /XDF/
    ```
