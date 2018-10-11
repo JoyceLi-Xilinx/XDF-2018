@@ -108,7 +108,7 @@ Note: Using VNC viewer to watch the video is limited to network bandwidth so tha
 
 #### Conclusion
 
-Huawei FP1c instances with Xilinx FPGAs can provide significant performance improvements over CPUs.The HEVC encoder running on F1 is 3.1x faster than the libx265 codec running on the CPU. It also provides better compression without sacrificing quality.
+Huawei FP1c instances with Xilinx FPGAs can provide significant performance improvements over CPUs.The HEVC encoder running on F1 is 3.8x faster than the libx265 codec running on the CPU. It also provides better compression without sacrificing quality.
 
 Multiple instances of the NGCodec encoder could be loaded in the FPGA, allowing parallel processing of multiple video streams and easily delivering more than a 10x increase in performance/$ over a CPU-based solution.
 
