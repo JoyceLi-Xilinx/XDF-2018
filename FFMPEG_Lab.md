@@ -83,7 +83,7 @@ The encoder will finish with a message similar to this one: \
     | performance               | 13 fps        | 50 fps  |
     | speed vs real-time        | 0.52 x *      | 2.02 x  |
     | compressed file size      | 19.3 MB      | 19.8 MB |
-    | FPGA acceleration ratio   |               | 3.1 x|     
+    | FPGA acceleration ratio   |               | 3.8 x|     
 
 *Note: FFmpeg doesn't print speed value directly. It can be calculated as 13fps/25fps=0.52.
 
